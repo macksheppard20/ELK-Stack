@@ -22,15 +22,15 @@ This document contains the following details:
   tasks
   
   -name: download filebeat .deb
-  command: curl -L -O https://artifacts.elastic.co/downlaods/beats/filebeat/filebeat-7.4.0-amd64.deb
+  -command: curl -L -O https://artifacts.elastic.co/downlaods/beats/filebeat/filebeat-7.4.0-amd64.deb
   
   -name: install filebeat.deb
-  command dpkg -i filebeat-7.4.0-amd64.deb
+  -command dpkg -i filebeat-7.4.0-amd64.deb
   
   -name: drop in filebeat.yml 
   copy: 
-     src: /etc/ansible/files/filebeat-config.yml
-     dest: /etc/filebeat/filebeat.yml
+     -src: /etc/ansible/files/filebeat-config.yml
+     -dest: /etc/filebeat/filebeat.yml
      
   -name: enable and configure system module
   command: filebeat modules enable system
