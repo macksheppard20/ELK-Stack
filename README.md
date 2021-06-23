@@ -103,9 +103,11 @@ Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because…
 
-What is the main advantage of automating configuration with Ansible?        - By automating configuration processes, this allows every task to become more efficient by having to maintain the files less often and eliminate the risk of error.
+What is the main advantage of automating configuration with Ansible?       
+
+- By automating configuration processes, this allows every task to become more efficient by having to maintain the files less often and eliminate the risk of error.
  
-ELK INSTALLATION
+Elk Installation
 
 The playbook for the ELK installation is as follows: [NOTE: These files have been tested and used for a live ELK deployment through Azure].
 
@@ -116,7 +118,7 @@ INstall docker module
 Download and launch a docker elk container
 Enable the docker services
 
-[Elk Installation Playbook.yml configuration]
+Elk Installation Playbook.yml configuration
 ```
 ---
 - name: Config Web VM with Docker
@@ -165,6 +167,7 @@ We have installed the following Beats on these machines:
 Web 1: 10.0.0.5
 Web 2: 10.0.0.6
 Web 3: 10.0.0.7
+
 Beats successfully installed on these machines: 
 -Filebeat
 -MetricBeat  
