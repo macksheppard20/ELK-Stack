@@ -17,11 +17,7 @@ This document contains the following details:
  - Machines Being Monitored
 - How to Use the Ansible Build
 
-File-beat.yml configuration:
-
-![alt text](https://github.com/macksheppard20/ELK-Stack/blob/main/Images/Screen_Shot_2021-06-09_at_8.07.59_PM.png "File-Beat")
-
-NOTE: This is the end result of running the File-Beat yaml configuration. You will now be able to navigate and investigate the syslogs. 
+File-beat.yml configuration: 
 ```
 ---
 - name: Installing and Launching filebeat
@@ -49,6 +45,9 @@ NOTE: This is the end result of running the File-Beat yaml configuration. You wi
   -name: start filebeat service
   command: service filebeat start
 ```
+NOTE: This is the end result of running the File-Beat yaml configuration. You will now be able to navigate and investigate the syslogs.
+
+![alt text](https://github.com/macksheppard20/ELK-Stack/blob/main/Images/Screen_Shot_2021-06-09_at_8.07.59_PM.png "File-Beat")
 
 Description of the Topology
 
