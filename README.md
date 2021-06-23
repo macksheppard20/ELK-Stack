@@ -15,14 +15,31 @@ This document contains the following details:
 - How to Use the Ansible Build
 
 [File-beat.yml configuration]
-
-
-
-
- 
-[FileBeat Syslog Dashboard Sample [Post Configuration]]
-
-
+---
+- name: Installing and Launching filebeat
+  hosts: webservers
+  become: true
+  tasks
+  
+  -name: download filebeat .deb
+  command: curl -L -O https://artifacts.elastic.co/downlaods/beats/filebeat/filebeat-7.4.0-amd64.deb
+  
+  -name: install filebeat.deb
+  command dpkg -i filebeat-7.4.0-amd64.deb
+  
+  -name: drop in filebeat.yml 
+  copy: 
+     src: /etc/ansible/files/filebeat-config.yml
+     dest: /etc/filebeat/filebeat.yml
+     
+  -name: enable and configure system module
+  command: filebeat modules enable system
+  
+  -name: setup filebeat
+  command: filebeat setup
+  
+  -name: start filebeat service
+  command: service filebeat start
 
 Description of the Topology
 
@@ -92,9 +109,40 @@ Download and launch a docker elk container
 Enable the docker services
 
 [Elk Installation Playbook.yml configuration]
-
-
-
+---
+- name: Config Web VM with Docker
+  hosts: webservers
+  become: true
+  tasks: 
+  - name: docker.io
+    apt: 
+      force_apt_get: yes
+      update_cache: yes
+      name: docker.io
+      state: present
+      
+  - name: Install pip3
+    apt: 
+      force_apt_get: yes
+      name: python3-pip
+      state: present
+      
+  - name: Install Docker python module
+    pip: 
+      name: Docker
+      state: present
+      
+  - name: download and launch a docker wb container 
+    docker_container: 
+      name: dvwa
+      image: cyberxsecurity/dvwa
+      state: started
+      published_ports: 80:80
+      
+  - name: Enable docker service
+    systemd: 
+      name: docker
+      enabled: yes
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
@@ -108,11 +156,12 @@ Web 1: 10.0.0.5
 Web 2: 10.0.0.6
 Web 3: 10.0.0.7
 Beats successfully installed on these machines: 
-Filebeat
-MetricBeat
+-Filebeat
+-MetricBeat  
+
 These Beats allow us to collect the following information from each machine: 
-Filebeat collects the log files and sends the data to Elasticsearch or Logstash for indexing
-Metricbeat collects metrics and serves the same purpose by sending the data from the machines to Logstash or Elasticsearch for indexing. 
+-Filebeat collects the log files and sends the data to Elasticsearch or Logstash for indexing
+-Metricbeat collects metrics and serves the same purpose by sending the data from the machines to Logstash or Elasticsearch for indexing. 
 
 Using the Playbook
 
@@ -142,5 +191,5 @@ How do I specify which machine to install the ELK server on versus which to inst
 Within the /etc/ansible/hosts file you can distinguish groups by setting ELK servers to their own group
 
 Which URL do you navigate to in order to check that the ELK server is running?
-http:// [IP of the machine] 
+http:// [IP of the machine]:[5601]/app/kibana/home
 This will take you to the home page of Kibana
