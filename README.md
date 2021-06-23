@@ -19,6 +19,8 @@ This document contains the following details:
 File-beat.yml configuration:
 
 ![alt text](https://github.com/macksheppard20/ELK-Stack/blob/main/Images/Screen_Shot_2021-06-09_at_8.07.59_PM.png "File-Beat")
+
+NOTE: This is the end result of running the File-Beat yaml configuration. You will now be able to navigate and investigate the syslogs. 
 ```
 ---
 - name: Installing and Launching filebeat
