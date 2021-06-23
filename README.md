@@ -14,7 +14,8 @@ This document contains the following details:
  - Machines Being Monitored
 - How to Use the Ansible Build
 
-[File-beat.yml configuration]
+#[File-beat.yml configuration]
+'''
 ---
 - name: Installing and Launching filebeat
   hosts: webservers
@@ -22,15 +23,15 @@ This document contains the following details:
   tasks
   
   -name: download filebeat .deb
-  -command: curl -L -O https://artifacts.elastic.co/downlaods/beats/filebeat/filebeat-7.4.0-amd64.deb
+   command: curl -L -O https://artifacts.elastic.co/downlaods/beats/filebeat/filebeat-7.4.0-amd64.deb
   
   -name: install filebeat.deb
-  -command dpkg -i filebeat-7.4.0-amd64.deb
+   command dpkg -i filebeat-7.4.0-amd64.deb
   
   -name: drop in filebeat.yml 
   copy: 
-     -src: /etc/ansible/files/filebeat-config.yml
-     -dest: /etc/filebeat/filebeat.yml
+     src: /etc/ansible/files/filebeat-config.yml
+     dest: /etc/filebeat/filebeat.yml
      
   -name: enable and configure system module
   command: filebeat modules enable system
@@ -40,6 +41,7 @@ This document contains the following details:
   
   -name: start filebeat service
   command: service filebeat start
+'''
 
 Description of the Topology
 
