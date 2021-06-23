@@ -14,8 +14,8 @@ This document contains the following details:
  - Machines Being Monitored
 - How to Use the Ansible Build
 
-#[File-beat.yml configuration]
-'''
+[File-beat.yml configuration]
+```
 ---
 - name: Installing and Launching filebeat
   hosts: webservers
@@ -41,7 +41,7 @@ This document contains the following details:
   
   -name: start filebeat service
   command: service filebeat start
-'''
+```
 
 Description of the Topology
 
@@ -111,6 +111,7 @@ Download and launch a docker elk container
 Enable the docker services
 
 [Elk Installation Playbook.yml configuration]
+```
 ---
 - name: Config Web VM with Docker
   hosts: webservers
@@ -145,6 +146,7 @@ Enable the docker services
     systemd: 
       name: docker
       enabled: yes
+```
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
