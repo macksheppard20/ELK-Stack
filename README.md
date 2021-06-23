@@ -163,11 +163,11 @@ Beats successfully installed on these machines:
 -Filebeat
 -MetricBeat  
 ```
-
+```
 These Beats allow us to collect the following information from each machine: 
    -Filebeat collects the log files and sends the data to Elasticsearch or Logstash for indexing
    -Metricbeat collects metrics and serves the same purpose by sending the data from the machines to Logstash or Elasticsearch for indexing. 
-
+```
 Using the Playbook
 
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
