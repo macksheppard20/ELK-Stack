@@ -1,7 +1,8 @@
 # ELK-Stack
 This repository contains yaml configuration files and documentation within my ELK Stack
- Automated ELK Stack Deployment
-The files in this repository were used to configure the network depicted below.
+
+#Automated ELK Stack Deployment
+-The files in this repository were used to configure the network depicted below.
 
 ![alt text](https://github.com/macksheppard20/ELK-Stack/blob/main/Diagrams/Network%20Diagram3.png "Network-Diagram") 
 
