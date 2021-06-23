@@ -3,7 +3,7 @@ This repository contains yaml configuration files and documentation within my EL
  Automated ELK Stack Deployment
 The files in this repository were used to configure the network depicted below.
 
-https://github.com/macksheppard20/ELK-Stack/tree/main/Diagrams (download may be neccessary to view)
+![alt text](https://github.com/macksheppard20/ELK-Stack/blob/main/Diagrams/Network%20Diagram-2.pdf "Network-Diagram") (download may be neccessary to view)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -16,7 +16,11 @@ This document contains the following details:
  - Machines Being Monitored
 - How to Use the Ansible Build
 
-[File-beat.yml configuration]
+File-beat.yml configuration:
+
+![alt text](https://github.com/macksheppard20/ELK-Stack/blob/main/Images/Screen_Shot_2021-06-09_at_8.07.59_PM.png "File-Beat")
+
+NOTE: This is the end result of running the File-Beat yaml configuration. You will now be able to navigate and investigate the syslogs. 
 ```
 ---
 - name: Installing and Launching filebeat
@@ -152,7 +156,7 @@ Enable the docker services
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![alt text](https://github.com/macksheppard20/ELK-Stack/blob/main/Images/Docker%20ps.PNG "Docker-PS")
 
 Target Machines & Beats
 ```
