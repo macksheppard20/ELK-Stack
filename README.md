@@ -153,7 +153,7 @@ The following screenshot displays the result of running `docker ps` after succes
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
 Target Machines & Beats
-
+```
 This ELK server is configured to monitor the following machines:
 We have installed the following Beats on these machines:
 Web 1: 10.0.0.5
@@ -162,7 +162,7 @@ Web 3: 10.0.0.7
 Beats successfully installed on these machines: 
 -Filebeat
 -MetricBeat  
-
+```
 These Beats allow us to collect the following information from each machine: 
 -Filebeat collects the log files and sends the data to Elasticsearch or Logstash for indexing
 -Metricbeat collects metrics and serves the same purpose by sending the data from the machines to Logstash or Elasticsearch for indexing. 
