@@ -1,9 +1,10 @@
 # ELK-Stack
 This repository contains yaml configuration files and documentation within my ELK Stack
- Automated ELK Stack Deployment
-The files in this repository were used to configure the network depicted below.
-
-![alt text](https://github.com/macksheppard20/ELK-Stack/blob/main/Diagrams/Network%20Diagram-2.pdf "Network-Diagram") (download may be neccessary to view)
+```
+Automated ELK Stack Deployment
+-The files in this repository were used to configure the network depicted below.
+```
+![alt text](https://github.com/macksheppard20/ELK-Stack/blob/main/Diagrams/Network%20Diagram3.png "Network-Diagram") 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YAML file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -16,11 +17,7 @@ This document contains the following details:
  - Machines Being Monitored
 - How to Use the Ansible Build
 
-File-beat.yml configuration:
-
-![alt text](https://github.com/macksheppard20/ELK-Stack/blob/main/Images/Screen_Shot_2021-06-09_at_8.07.59_PM.png "File-Beat")
-
-NOTE: This is the end result of running the File-Beat yaml configuration. You will now be able to navigate and investigate the syslogs. 
+File-beat.yml configuration: 
 ```
 ---
 - name: Installing and Launching filebeat
@@ -48,6 +45,9 @@ NOTE: This is the end result of running the File-Beat yaml configuration. You wi
   -name: start filebeat service
   command: service filebeat start
 ```
+NOTE: This is the end result of running the File-Beat yaml configuration. You will now be able to navigate and investigate the syslogs.
+
+![alt text](https://github.com/macksheppard20/ELK-Stack/blob/main/Images/Screen_Shot_2021-06-09_at_8.07.59_PM.png "File-Beat")
 
 Description of the Topology
 
